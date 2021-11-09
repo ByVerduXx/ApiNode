@@ -1,17 +1,17 @@
 const bcrypt = require('bcrypt');
 
-const hashPassword = (plainTextPassword, done) => {
-    bcrypt.hash(plainTextPassword, 10, done);
+const hashPassword = (plainTextPwd, done) => {
+    bcrypt.hash(plainTextPwd, 10, done);
 };
 
-const hashPasswordSync = (plainTextPassword) => {
-    return bcrypt.hashSync(plainTextPassword, 10);
+const hashPasswordSync = (plainTextPwd) => {
+    return bcrypt.hashSync(plainTextPwd, 10);
 };
 
-const comparePassword = (plainTextPassword, hash, done) => {
-    bcrypt.compare(plainTextPassword, hash, done);
-}
+const comparePassword = (plainPassword, hashPassword, done) => {
+    bcrypt.compare(plainPassword, hashPassword, done);
+};
 
 exports.hashPassword = hashPassword;
-exports.comparePassword = comparePassword;
 exports.hashPasswordSync = hashPasswordSync;
+exports.comparePassword = comparePassword;
