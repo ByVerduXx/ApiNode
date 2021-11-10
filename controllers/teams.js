@@ -19,7 +19,9 @@ const addPokemon = (userId, pokemon) => {
 }
 
 const deletePokemon = (userId, index) => {
-    teamsDatabase[userId].splice(index, 1);
+    if (teamsDatabase[userId][index]) {
+        teamsDatabase[userId].splice(index, 1);
+    }
 }
 const setTeam = (userId, team) => {
     teamsDatabase[userId] = team;
