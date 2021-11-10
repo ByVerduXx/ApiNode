@@ -10,6 +10,7 @@ const init = (app) => {
     passport.use(new JwtStrategy(opts, (decoded, done) => {
         return done(null, decoded);
     }));
+
     app.use(passport.initialize());
 }
 
